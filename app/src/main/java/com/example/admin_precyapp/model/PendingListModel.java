@@ -10,6 +10,15 @@ public class PendingListModel {
     String numofPeople;
 
 
+    public PendingListModel(String reservationID, String name, String mobilenum, String event, String reservationDate, String numofPeople) {
+        this.reservationID = reservationID;
+        this.name = name;
+        this.mobilenum = mobilenum;
+        this.event = event;
+        this.reservationDate = reservationDate;
+        this.numofPeople = numofPeople;
+    }
+
     public String getReservationID() {
         return reservationID;
     }
