@@ -4,4 +4,5 @@
     <string name="customizeDateButton">Customize date using these button</string>
     <string name="not_available">select unavailable date and click this button</string>
     <string name="remove">to remove unavailable date</string>
+    <string name="user_uid">User UID</string>
 </resources>

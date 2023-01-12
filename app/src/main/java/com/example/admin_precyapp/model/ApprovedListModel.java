@@ -1,6 +1,6 @@
 package com.example.admin_precyapp.model;
 
-public class PendingListModel {
+public class ApprovedListModel {
 
     String reservationID;
     String name;
@@ -8,24 +8,23 @@ public class PendingListModel {
     String event;
     String reservationDate;
     String numofPeople;
-    Boolean status;
     String userID;
     String timeOfReservation;
     String dateOfReservation;
-    String venue;
     String companyName;
+    String venue;
 
 
 
-    public PendingListModel(String reservationID, String name, String mobilenum, String event, String reservationDate,
-                            String numofPeople, Boolean status, String userID, String timeOfReservation, String dateOfReservation, String companyName, String venue) {
+    public ApprovedListModel(String reservationID, String name, String mobilenum, String event, String reservationDate,
+                            String numofPeople, String userID, String timeOfReservation, String dateOfReservation,
+                             String companyName, String venue) {
         this.reservationID = reservationID;
         this.name = name;
         this.mobilenum = mobilenum;
         this.event = event;
         this.reservationDate = reservationDate;
         this.numofPeople = numofPeople;
-        this.status = status;
         this.userID = userID;
         this.timeOfReservation = timeOfReservation;
         this.dateOfReservation = dateOfReservation;
@@ -60,13 +59,6 @@ public class PendingListModel {
         return numofPeople;
     }
 
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
 
     public String getUserID() {
         return userID;
@@ -80,11 +72,11 @@ public class PendingListModel {
         return dateOfReservation;
     }
 
-    public String getVenue() {
-        return venue;
-    }
-
     public String getCompanyName() {
         return companyName;
+    }
+
+    public String getVenue() {
+        return venue;
     }
 }

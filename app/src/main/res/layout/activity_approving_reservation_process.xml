@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.Admin_PrecyApp"
+    android:background="@color/white"
+    tools:context=".ApprovingReservationProcess">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/userPending_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                tools:ignore="MissingConstraints"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/done_Btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                android:text="Done"
+                android:background="@drawable/round_btn"
+                android:textColor="@color/white"/>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+
+</RelativeLayout>

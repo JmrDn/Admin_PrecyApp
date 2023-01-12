@@ -41,8 +41,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="250dp"
-                    >
+                    android:layout_marginTop="250dp">
 
 
                     <androidx.cardview.widget.CardView
@@ -81,6 +80,7 @@
                                 app:cardElevation="10dp">
 
                                 <Button
+                                    android:id="@+id/pendingBtn"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="?attr/selectableItemBackground" />
@@ -100,8 +100,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginTop="78dp"
-                                    android:text="Pending"
                                     android:fontFamily="@font/catamaransemibold"
+                                    android:text="Pending"
                                     android:textColor="@color/fontcolorpending"
                                     android:textSize="20sp" />
 
@@ -125,6 +125,7 @@
                                 app:cardElevation="10dp">
 
                                 <Button
+                                    android:id="@+id/approvedBtn"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:background="?attr/selectableItemBackground" />
@@ -144,8 +145,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginLeft="20dp"
                                     android:layout_marginTop="78dp"
-                                    android:text="Approved"
                                     android:fontFamily="@font/catamaransemibold"
+                                    android:text="Approved"
                                     android:textColor="@color/fontcolorapproved"
                                     android:textSize="20sp" />
 
@@ -167,14 +168,14 @@
                         android:id="@+id/data_cardView"
                         android:layout_width="380dp"
                         android:layout_height="180dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginStart="15dp"
-
-                        android:layout_centerHorizontal="true"
                         android:layout_below="@+id/todaysReservation_cardView"
-                        app:cardElevation="10dp"
+                        android:layout_centerHorizontal="true"
+
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="20dp"
+                        app:cardBackgroundColor="@color/white"
                         app:cardCornerRadius="10dp"
-                        app:cardBackgroundColor="@color/white">
+                        app:cardElevation="10dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -203,7 +204,7 @@
                                             android:id="@+id/client_Btn"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:background="?attr/selectableItemBackground"/>
+                                            android:background="?attr/selectableItemBackground" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
@@ -244,7 +245,7 @@
                                             android:id="@+id/reservation_Btn"
                                             android:layout_width="match_parent"
                                             android:layout_height="match_parent"
-                                            android:background="?attr/selectableItemBackground"/>
+                                            android:background="?attr/selectableItemBackground" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
@@ -279,12 +280,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/data_cardView"
+                        android:layout_marginLeft="15dp"
                         android:layout_marginTop="30dp"
-                        android:text="Recent Reservation"
                         android:fontFamily="@font/catamaransemibold"
+                        android:text="Recent Reservation"
                         android:textColor="@color/black"
-                        android:textSize="25sp"
-                        android:layout_marginLeft="15dp"/>
+                        android:textSize="25sp" />
 
 
                 </RelativeLayout>

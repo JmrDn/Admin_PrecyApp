@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/pending_cardView"
+                    android:id="@+id/userpending_cardView"
                     android:layout_width="120dp"
                     android:layout_height="50dp"
                     android:layout_alignParentRight="true"
@@ -32,6 +32,7 @@
                     android:layout_marginRight="15dp"
                     app:cardBackgroundColor="@color/pendingbg"
                     app:cardCornerRadius="5dp"
+
                     app:cardElevation="5dp">
 
                     <RelativeLayout
@@ -39,7 +40,7 @@
                         android:layout_height="match_parent">
 
                         <TextView
-                            android:id="@+id/status"
+                            android:id="@+id/User_status"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
@@ -50,29 +51,11 @@
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/dateofReservation_TxtView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Date"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="20dp"/>
-
-                <TextView
-                    android:id="@+id/timeofReservation_TxtView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Time"
-                    android:layout_below="@+id/dateofReservation_TxtView"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="20dp"/>
-
                 <androidx.cardview.widget.CardView
                     android:id="@+id/reservationID_cardView"
                     android:layout_width="150dp"
                     android:layout_height="40dp"
-                    android:layout_below="@+id/pending_cardView"
+                    android:layout_below="@+id/userpending_cardView"
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="10dp"
                     app:cardBackgroundColor="@color/semibrown"
@@ -97,39 +80,19 @@
                 </androidx.cardview.widget.CardView>
 
                 <TextView
-                    android:id="@+id/reservationID"
+                    android:id="@+id/user_ReservationID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/pending_cardView"
+                    android:layout_below="@+id/userpending_cardView"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="14dp"
                     android:layout_toRightOf="@+id/reservationID_cardView"
                     android:text="2021-ABCDEFGE"
                     android:textColor="@color/black"
-                    android:textIsSelectable="true"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </RelativeLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/user_uid"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/userUID"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="UID"
-                android:textColor="@color/black"
-                android:textIsSelectable="true"
-                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -142,10 +105,11 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/name"
+                android:id="@+id/User_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+
                 android:text="Your name"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
@@ -153,21 +117,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:textStyle="bold"
+                android:text="Company Name"
                 android:layout_marginTop="10dp"
-                android:text="Company Nane"
-                android:textColor="@color/black"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
 
             <TextView
                 android:id="@+id/companyName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="My Company"
+                android:text="Company Name"
+                android:textSize="20sp"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:layout_marginLeft="20dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -180,7 +144,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/mobileNumber"
+                android:id="@+id/User_mobileNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -199,7 +163,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/reservationDate"
+                android:id="@+id/User_reservationDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -210,22 +174,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
+                android:textStyle="bold"
                 android:text="Venue"
-                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
                 android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textColor="@color/black"
+                android:layout_marginLeft="20dp"/>
 
             <TextView
                 android:id="@+id/venue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="My Venue"
+                android:text="my Venue"
+                android:textSize="20sp"
                 android:textColor="@color/black"
-                android:textSize="20sp" />
-
+                android:layout_marginLeft="20dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -238,7 +201,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/event"
+                android:id="@+id/User_event"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -257,7 +220,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/numofPeople"
+                android:id="@+id/User_numofPeople"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
