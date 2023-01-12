@@ -51,7 +51,7 @@ public class AdminDashboard extends AppCompatActivity {
 
 
 
-        firebaseFirestore.collection("ApprovedReservationListData"). document("NumberOfApprovedReservation") .addSnapshotListener(new EventListener<DocumentSnapshot>() {
+        firebaseFirestore.collection("NumberOfApproved"). document("NumberOfApprovedReservation") .addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
 

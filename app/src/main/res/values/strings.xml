@@ -5,4 +5,6 @@
     <string name="not_available">select unavailable date and click this button</string>
     <string name="remove">to remove unavailable date</string>
     <string name="user_uid">User UID</string>
+    <string name="company_name">Company Name</string>
+    <string name="venue">Event Venue</string>
 </resources>

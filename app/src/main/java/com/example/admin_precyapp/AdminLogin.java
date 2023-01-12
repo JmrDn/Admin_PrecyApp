@@ -28,6 +28,9 @@ public class AdminLogin extends AppCompatActivity {
         password = findViewById(R.id.admin_password);
         myProgressBar = findViewById(R.id.login_progressBar);
 
+        email.setText("");
+        password.setText("");
+
         password.setTransformationMethod(new PasswordTransformationMethod());
         myProgressBar.setVisibility(View.GONE);
 

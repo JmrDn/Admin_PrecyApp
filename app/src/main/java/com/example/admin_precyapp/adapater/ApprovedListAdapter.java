@@ -54,6 +54,8 @@ public class ApprovedListAdapter extends RecyclerView.Adapter<ApprovedListAdapte
         holder.userID.setText(approvedListModel.getUserID());
         holder.timeOfReservation.setText(approvedListModel.getTimeOfReservation());
         holder.dateOfReservation.setText(approvedListModel.getDateOfReservation());
+        holder.companyName.setText(approvedListModel.getCompanyName());
+        holder.venue.setText(approvedListModel.getVenue());
 
     }
 
@@ -64,7 +66,7 @@ public class ApprovedListAdapter extends RecyclerView.Adapter<ApprovedListAdapte
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView reservationID, name, mobileno, reservationDate, event,
+        TextView reservationID, name, mobileno, reservationDate, event, companyName, venue,
                 numofPeople, userID, dateOfReservation, timeOfReservation;
 
 
@@ -80,6 +82,8 @@ public class ApprovedListAdapter extends RecyclerView.Adapter<ApprovedListAdapte
             userID  = itemView.findViewById(R.id.userUID);
             dateOfReservation = itemView.findViewById(R.id.dateofReservation_TxtView);
             timeOfReservation = itemView.findViewById(R.id.timeofReservation_TxtView);
+            companyName = itemView.findViewById(R.id.companyName);
+            venue = itemView.findViewById(R.id.venue);
 
         }
     }
