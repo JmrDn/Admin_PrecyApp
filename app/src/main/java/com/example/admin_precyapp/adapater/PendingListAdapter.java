@@ -1,11 +1,13 @@
 package com.example.admin_precyapp.adapater;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,12 +16,15 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.admin_precyapp.MyReceipt;
 import com.example.admin_precyapp.PendingReservationList;
 import com.example.admin_precyapp.R;
 import com.example.admin_precyapp.model.PendingListModel;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,6 +33,8 @@ public class PendingListAdapter extends RecyclerView.Adapter<PendingListAdapter.
 
     Context context;
     ArrayList<PendingListModel> list;
+    BottomSheetDialog bottomSheetDialog;
+
 
     public PendingListAdapter(Context context, ArrayList<PendingListModel> list) {
         this.context = context;
@@ -80,6 +87,32 @@ public class PendingListAdapter extends RecyclerView.Adapter<PendingListAdapter.
                 Toast.makeText(context.getApplicationContext(), "Enter User UID and Reservation ID to approve", Toast.LENGTH_LONG).show();
             }
         });
+
+
+
+        holder.seeReceiptBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                step1
+//                bottomSheetDialog = new BottomSheetDialog(context);
+//                LayoutInflater inflater=  LayoutInflater.from(context);
+//                View sss = inflater.inflate(R.layout.btmsht_image_receipt,null,false);
+//                ImageView image = sss.findViewById(R.id.receipt);
+//                Picasso.get().load(pendingListModel.getImageProof()).placeholder(R.drawable.adminbg).error(R.drawable.adminbg).resize(720,1080).centerCrop().into(image);
+//
+//                bottomSheetDialog.setContentView(sss);
+//                bottomSheetDialog.setCanceledOnTouchOutside(true);
+//                bottomSheetDialog.show();
+
+                //plan b
+                Intent intent = new Intent(context, MyReceipt.class);
+                intent.putExtra("image", pendingListModel.getImageProof());
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+
+            }
+        });
+
 
     }
 

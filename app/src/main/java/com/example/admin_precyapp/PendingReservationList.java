@@ -106,7 +106,8 @@ public class PendingReservationList extends AppCompatActivity implements Navigat
                             for (QueryDocumentSnapshot document :value) {
 
                                 if (document.exists()) {
-                                    list.add(new PendingListModel(document.get("Reservation ID").toString(),
+                                    list.add(new PendingListModel(
+                                            document.get("Reservation ID").toString(),
                                             document.get("Name").toString(),
                                             document.get("Phone Number").toString(),
                                             document.get("Event").toString() ,
@@ -118,7 +119,10 @@ public class PendingReservationList extends AppCompatActivity implements Navigat
                                             document.get("Date of Reservation").toString(),
                                             document.get("CompanyName").toString(),
                                             document.get("Venue").toString(),
-                                            document.get("GCash").toString()));
+                                            document.get("GCash").toString(),
+                                            document.get("ImageProof").toString()
+
+                                    ));
 
                                     myAdapter.notifyDataSetChanged();
                                 }

@@ -15,12 +15,10 @@ public class PendingListModel {
     String venue;
     String companyName;
     String gCashNum;
+    String imageProof;
 
 
-
-    public PendingListModel(String reservationID, String name, String mobilenum, String event, String reservationDate,
-                            String numofPeople, Boolean status, String userID, String timeOfReservation, String dateOfReservation,
-                            String companyName, String venue, String gCashNum) {
+    public PendingListModel(String reservationID, String name, String mobilenum, String event, String reservationDate, String numofPeople, Boolean status, String userID, String timeOfReservation, String dateOfReservation, String venue, String companyName, String gCashNum, String imageProof) {
         this.reservationID = reservationID;
         this.name = name;
         this.mobilenum = mobilenum;
@@ -31,13 +29,15 @@ public class PendingListModel {
         this.userID = userID;
         this.timeOfReservation = timeOfReservation;
         this.dateOfReservation = dateOfReservation;
-        this.companyName = companyName;
         this.venue = venue;
+        this.companyName = companyName;
         this.gCashNum = gCashNum;
+        this.imageProof = imageProof;
     }
 
-
-
+    public String getImageProof() {
+        return imageProof;
+    }
 
     public String getReservationID() {
         return reservationID;
