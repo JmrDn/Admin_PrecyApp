@@ -95,41 +95,41 @@ public class PendingReservationList extends AppCompatActivity implements Navigat
 
 
         firestore.collection("PendingReservation").addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                        if(error != null){
-                            Toast.makeText(PendingReservationList.this, error.getMessage(), Toast.LENGTH_LONG).show();
-                        }
-                        else{
-                            list.clear();
+            @Override
+            public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                if(error != null){
+                    Toast.makeText(PendingReservationList.this, error.getMessage(), Toast.LENGTH_LONG).show();
+                }
+                else{
+                    list.clear();
 
-                            for (QueryDocumentSnapshot document :value) {
+                    for (QueryDocumentSnapshot document :value) {
 
-                                if (document.exists()) {
-                                    list.add(new PendingListModel(
-                                            document.get("Reservation ID").toString(),
-                                            document.get("Name").toString(),
-                                            document.get("Phone Number").toString(),
-                                            document.get("Event").toString() ,
-                                            document.get("ReservationDate").toString(),
-                                            document.get("Number of People").toString(),
-                                            Boolean.parseBoolean(document.get("Status").toString()),
-                                            document.get("User ID").toString(),
-                                            document.get("Time of Reservation").toString(),
-                                            document.get("Date of Reservation").toString(),
-                                            document.get("CompanyName").toString(),
-                                            document.get("Venue").toString(),
-                                            document.get("GCash").toString(),
-                                            document.get("ImageProof").toString()
+                        if (document.exists()) {
+                            list.add(new PendingListModel(
+                                    document.get("Reservation ID").toString(),
+                                    document.get("Name").toString(),
+                                    document.get("Phone Number").toString(),
+                                    document.get("Event").toString() ,
+                                    document.get("ReservationDate").toString(),
+                                    document.get("Number of People").toString(),
+                                    Boolean.parseBoolean(document.get("Status").toString()),
+                                    document.get("User ID").toString(),
+                                    document.get("Time of Reservation").toString(),
+                                    document.get("Date of Reservation").toString(),
+                                    document.get("CompanyName").toString(),
+                                    document.get("Venue").toString(),
+                                    document.get("GCash").toString(),
+                                    document.get("ImageProof").toString()
 
-                                    ));
+                            ));
 
-                                    myAdapter.notifyDataSetChanged();
-                                }
-                            }
+                            myAdapter.notifyDataSetChanged();
                         }
                     }
-                });
+                }
+            }
+        });
     }
 
     private void setUpDrawer() {

@@ -27,13 +27,13 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class AdminDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-   Button pendingBtn, approvedBtn, finishedBtn;
-   TextView pendingTxtView, approvedTxtView, finishedTextView;
-   FirebaseFirestore firebaseFirestore;
+    Button pendingBtn, approvedBtn, finishedBtn;
+    TextView pendingTxtView, approvedTxtView, finishedTextView;
+    FirebaseFirestore firebaseFirestore;
 
-   DrawerLayout drawerLayout;
-   NavigationView navigationView;
-   Toolbar toolbar;
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
 
 
 
@@ -57,7 +57,7 @@ public class AdminDashboard extends AppCompatActivity implements NavigationView.
 
 
 
-        
+
         setUpDrawer();
 
         firebaseFirestore.collection("NumberOfPending"). document("NumberOfPendingReservation") .addSnapshotListener(new EventListener<DocumentSnapshot>() {

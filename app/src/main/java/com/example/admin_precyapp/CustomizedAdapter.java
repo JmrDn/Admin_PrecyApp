@@ -46,10 +46,10 @@ public class CustomizedAdapter extends RecyclerView.Adapter<CustomizedAdapter.My
 
         TextView textView;
 
-       public MyViewHolder(View view) {
+        public MyViewHolder(View view) {
             super(view);
 
-           textView = view.findViewById(R.id.textView);
+            textView = view.findViewById(R.id.textView);
 
         }
     }
