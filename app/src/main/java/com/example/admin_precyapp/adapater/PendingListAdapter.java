@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,6 +58,7 @@ public class PendingListAdapter extends RecyclerView.Adapter<PendingListAdapter.
         holder.dateOfReservation.setText(pendingListModel.getDateOfReservation());
         holder.companyName.setText(pendingListModel.getCompanyName());
         holder.venue.setText(pendingListModel.getVenue());
+        holder.gCashNumber.setText(pendingListModel.getgCashNum());
 
         if(pendingListModel.getStatus().equals(true)){
             holder.statusCardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.approvedbg));
@@ -89,8 +91,9 @@ public class PendingListAdapter extends RecyclerView.Adapter<PendingListAdapter.
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView reservationID, name, mobileno, reservationDate, event, venue, companyName,
-                numofPeople, statusTxtView, userID, dateOfReservation, timeOfReservation;
+                numofPeople, statusTxtView, userID, dateOfReservation, timeOfReservation, gCashNumber;
         CardView statusCardView;
+        Button seeReceiptBtn;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -108,7 +111,8 @@ public class PendingListAdapter extends RecyclerView.Adapter<PendingListAdapter.
             userID  = itemView.findViewById(R.id.userUID);
             dateOfReservation = itemView.findViewById(R.id.dateofReservation_TxtView);
             timeOfReservation = itemView.findViewById(R.id.timeofReservation_TxtView);
-
+            seeReceiptBtn = itemView.findViewById(R.id.seeReceipt_Btn);
+            gCashNumber = itemView.findViewById(R.id.gCashNumber_textView);
         }
     }
 }

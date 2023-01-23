@@ -14,11 +14,13 @@ public class PendingListModel {
     String dateOfReservation;
     String venue;
     String companyName;
+    String gCashNum;
 
 
 
     public PendingListModel(String reservationID, String name, String mobilenum, String event, String reservationDate,
-                            String numofPeople, Boolean status, String userID, String timeOfReservation, String dateOfReservation, String companyName, String venue) {
+                            String numofPeople, Boolean status, String userID, String timeOfReservation, String dateOfReservation,
+                            String companyName, String venue, String gCashNum) {
         this.reservationID = reservationID;
         this.name = name;
         this.mobilenum = mobilenum;
@@ -31,6 +33,7 @@ public class PendingListModel {
         this.dateOfReservation = dateOfReservation;
         this.companyName = companyName;
         this.venue = venue;
+        this.gCashNum = gCashNum;
     }
 
 
@@ -86,5 +89,9 @@ public class PendingListModel {
 
     public String getCompanyName() {
         return companyName;
+    }
+
+    public String getgCashNum() {
+        return gCashNum;
     }
 }

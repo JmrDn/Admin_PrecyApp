@@ -27,7 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class AdminDashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-   Button pendingBtn, approvedBtn, finishedBtn;
+   Button pendingBtn, approvedBtn, finishedBtn, receiptBtn;
    TextView pendingTxtView, approvedTxtView, finishedTextView;
    FirebaseFirestore firebaseFirestore;
 
@@ -45,6 +45,7 @@ public class AdminDashboard extends AppCompatActivity implements NavigationView.
         pendingBtn = findViewById(R.id.pendingBtn);
         approvedBtn = findViewById(R.id.approvedBtn);
         finishedBtn = findViewById(R.id.finishedBtn);
+//        receiptBtn = findViewById(R.id.seeReceipt_Btn);
         pendingTxtView = findViewById(R.id.pendingTxtView);
         approvedTxtView = findViewById(R.id.approvedTxtView);
         finishedTextView = findViewById(R.id.finished_TxtView);
@@ -60,6 +61,7 @@ public class AdminDashboard extends AppCompatActivity implements NavigationView.
 
         
         setUpDrawer();
+        setUpSeeReceiptButton();
 
         firebaseFirestore.collection("NumberOfPending"). document("NumberOfPendingReservation") .addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
@@ -128,6 +130,15 @@ public class AdminDashboard extends AppCompatActivity implements NavigationView.
 
     }
 
+    private void setUpSeeReceiptButton() {
+
+        receiptBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
 
 
     private void setUpDrawer() {

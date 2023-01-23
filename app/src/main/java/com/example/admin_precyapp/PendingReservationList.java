@@ -117,7 +117,8 @@ public class PendingReservationList extends AppCompatActivity implements Navigat
                                             document.get("Time of Reservation").toString(),
                                             document.get("Date of Reservation").toString(),
                                             document.get("CompanyName").toString(),
-                                            document.get("Venue").toString()));
+                                            document.get("Venue").toString(),
+                                            document.get("GCash").toString()));
 
                                     myAdapter.notifyDataSetChanged();
                                 }

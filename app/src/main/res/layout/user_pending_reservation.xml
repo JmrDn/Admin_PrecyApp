@@ -13,224 +13,260 @@
         app:cardElevation="5dp">
 
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/userpending_cardView"
-                    android:layout_width="120dp"
-                    android:layout_height="50dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="15dp"
-                    app:cardBackgroundColor="@color/pendingbg"
-                    app:cardCornerRadius="5dp"
 
-                    app:cardElevation="5dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/userpending_cardView"
+                        android:layout_width="120dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="15dp"
+                        app:cardBackgroundColor="@color/pendingbg"
+                        app:cardCornerRadius="5dp"
 
-                        <TextView
-                            android:id="@+id/User_status"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:text="Pending"
-                            android:textColor="@color/fontcolorpending"
-                            android:textSize="20sp" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
+                        app:cardElevation="5dp">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/reservationID_cardView"
-                    android:layout_width="150dp"
-                    android:layout_height="40dp"
-                    android:layout_below="@+id/userpending_cardView"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="10dp"
-                    app:cardBackgroundColor="@color/semibrown"
-                    app:cardCornerRadius="5dp"
-                    app:cardElevation="5dp">
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                            <TextView
+                                android:id="@+id/User_status"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:text="Pending"
+                                android:textColor="@color/fontcolorpending"
+                                android:textSize="20sp" />
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerHorizontal="true"
-                            android:layout_centerVertical="true"
-                            android:fontFamily="@font/poppinsregular"
-                            android:text="Reservation ID"
-                            android:textColor="@color/white"
-                            android:textSize="16sp" />
-                    </RelativeLayout>
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/reservationID_cardView"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/userpending_cardView"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        app:cardBackgroundColor="@color/semibrown"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="5dp">
 
-                </androidx.cardview.widget.CardView>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/poppinsregular"
+                                android:text="Reservation ID"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/user_ReservationID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/userpending_cardView"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_toRightOf="@+id/reservationID_cardView"
+                        android:text="2021-ABCDEFGE"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
 
                 <TextView
-                    android:id="@+id/user_ReservationID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/userpending_cardView"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="14dp"
-                    android:layout_toRightOf="@+id/reservationID_cardView"
-                    android:text="2021-ABCDEFGE"
+                    android:layout_marginTop="10dp"
+                    android:text="Name"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
-            </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/User_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+
+                    android:text="Your name"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Company Name"
+                    android:layout_marginTop="10dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:id="@+id/companyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Company Name"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Mobile Number"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/User_mobileNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="09XXXXXXXXX"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Event Date"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/User_reservationDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="January 07, 2001"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Venue"
+                    android:layout_marginTop="10dp"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:id="@+id/venue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="my Venue"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Event"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/User_event"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Birthday Event"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Number of People"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/User_numofPeople"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="20"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/gcash_number"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/gCashNumber_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="09124869259"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/seeReceipt_Btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="@string/see_receipt"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/black"/>
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:text="Name"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/User_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+            </LinearLayout>
 
-                android:text="Your name"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="Company Name"
-                android:layout_marginTop="10dp"
-                android:textSize="15sp"
-                android:textColor="@color/black"
-                android:layout_marginLeft="20dp"/>
-
-            <TextView
-                android:id="@+id/companyName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Company Name"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:layout_marginLeft="20dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:text="Mobile Number"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/User_mobileNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="09XXXXXXXXX"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:text="Event Date"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/User_reservationDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="January 07, 2001"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="Venue"
-                android:layout_marginTop="10dp"
-                android:textSize="15sp"
-                android:textColor="@color/black"
-                android:layout_marginLeft="20dp"/>
-
-            <TextView
-                android:id="@+id/venue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="my Venue"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:layout_marginLeft="20dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:text="Event"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/User_event"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="Birthday Event"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:text="Number of People"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/User_numofPeople"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:text="20"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:layout_marginBottom="10dp"/>
-
-
-        </LinearLayout>
+        </ScrollView>
     </androidx.cardview.widget.CardView>
 
 </RelativeLayout>
