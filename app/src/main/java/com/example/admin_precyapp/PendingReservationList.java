@@ -1,21 +1,30 @@
 package com.example.admin_precyapp;
 
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.admin_precyapp.adapater.PendingListAdapter;
+import com.example.admin_precyapp.drawer.Maintenance;
 import com.example.admin_precyapp.model.PendingListModel;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
@@ -24,7 +33,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-public class PendingReservationList extends AppCompatActivity {
+public class PendingReservationList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     RecyclerView recyclerView;
     EditText userUID_EditTxt, userReservationID_EditTxt;
@@ -34,6 +43,10 @@ public class PendingReservationList extends AppCompatActivity {
     FirebaseFirestore firestore;
     public static String userUID;
     public static String userReservationID;
+
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
 
 
     @Override
@@ -46,6 +59,10 @@ public class PendingReservationList extends AppCompatActivity {
         userUID_EditTxt = findViewById(R.id.userUID);
         userReservationID_EditTxt = findViewById(R.id.userReservationID);
 
+        drawerLayout = findViewById(R.id.pendingList_drawerLayout);
+        navigationView = findViewById(R.id.pendingListNav_View);
+        toolbar = findViewById(R.id.pendingList_toolbar);
+
 
         firestore = FirebaseFirestore.getInstance();
         recyclerView.setLayoutManager(new LinearLayoutManager(this ));
@@ -53,7 +70,7 @@ public class PendingReservationList extends AppCompatActivity {
         myAdapter = new PendingListAdapter(getApplicationContext(), list);
         recyclerView.setAdapter(myAdapter);
 
-
+        setUpDrawer();
 
 
         enter.setOnClickListener(new View.OnClickListener() {
@@ -109,47 +126,58 @@ public class PendingReservationList extends AppCompatActivity {
                     }
                 });
     }
+
+    private void setUpDrawer() {
+
+
+        toolbar.setTitle("Pending Reservation");
+        setSupportActionBar(toolbar);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.nav_drawer_open, R.string.nav_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else {
+            super.onBackPressed();
+        }
+
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.navDashboard:
+                Intent intentDashboard = new Intent(getApplicationContext(), AdminDashboard.class);
+                startActivity(intentDashboard);
+                break;
+            case R.id.navMaintenance:
+                Intent intent = new Intent(getApplicationContext(), Maintenance.class);
+                startActivity(intent);
+                break;
+            case R.id.navPendingReservation:
+                startActivity(new Intent(getApplicationContext(), PendingReservationList.class));
+                break;
+            case R.id.navApprovedReservation:
+                startActivity(new Intent(getApplicationContext(), ApprovedReservationList.class));
+                break;
+            case R.id.navFinishedReservation:
+                startActivity(new Intent(getApplicationContext(), FinishedReservationList.class));
+                break;
+
+
+        }
+        return true;
+    }
+
 }
-
-
-
-
-// databaseReference.addValueEventListener(new ValueEventListener() {
-//@Override
-//public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//        for (DataSnapshot pendingReservation : snapshot.child("PendingReservation").getChildren()){
-//
-//        if (pendingReservation.hasChild("Reservation ID")
-//        && pendingReservation.hasChild("Name")
-//        && pendingReservation.hasChild("Phone Number")
-//        && pendingReservation.hasChild("ReservationDate")
-//        && pendingReservation.hasChild("Event")
-//        && pendingReservation.hasChild("Number of People")){
-//
-//final  String getReservationID = pendingReservation.child("Reservation ID").getValue(String.class);
-//final  String getName = pendingReservation.child("Name").getValue(String.class);
-//final  String getMobileNum = pendingReservation.child("Phone Number").getValue(String.class);
-//final  String getReservationDate = pendingReservation.child("ReservationDate").getValue(String.class);
-//final  String getEvent = pendingReservation.child("Event").getValue(String.class);
-//final  String getNumOfPeople = pendingReservation.child("Number of People").getValue(String.class);
-//
-//        PendingListModel myList = new PendingListModel(getReservationID, getName, getMobileNum, getEvent, getReservationDate, getNumOfPeople);
-//        list.add(myList);
-//
-//
-//        }
-//
-//
-//
-//        }
-//
-//
-//
-//        }
-//
-//@Override
-//public void onCancelled(@NonNull DatabaseError error) {
-//
-//        }
-//        });

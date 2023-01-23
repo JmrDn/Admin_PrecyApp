@@ -13,6 +13,7 @@ public class ApprovedListModel {
     String dateOfReservation;
     String companyName;
     String venue;
+    Boolean status;
 
 
 
@@ -30,6 +31,7 @@ public class ApprovedListModel {
         this.dateOfReservation = dateOfReservation;
         this.companyName = companyName;
         this.venue = venue;
+        status = false;
     }
 
 
@@ -78,5 +80,13 @@ public class ApprovedListModel {
 
     public String getVenue() {
         return venue;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 }

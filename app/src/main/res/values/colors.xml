@@ -19,4 +19,9 @@
     <color name="approvedbg">#B6FFB9</color>
     <color name="fontcolorapproved">#00FF0A</color>
     <color name="semibrown">#BC6600</color>
+    <color name="lightbrown">#FFA438</color>
+    <color name="finishedBG">#9BBDFF</color>
+    <color name="finishedFontColor">#2E75FF</color>
+    <color name="receiptFontColor">#00FFFF</color>
+    <color name="receiptBG">#C8FFFF</color>
 </resources>

@@ -114,6 +114,7 @@ public class UserPendingListAdapter extends RecyclerView.Adapter<UserPendingList
             ReservationDetails.put("Date of Reservation", MyViewHolder.dateOfReservation_Appr);
             ReservationDetails.put("CompanyName", MyViewHolder.clientCompanyName);
             ReservationDetails.put("Venue", MyViewHolder.reservationVenue);
+            ReservationDetails.put("Status", false);
 
             firestore.collection("ApprovedReservationListData").document(holder.userReservationID)
                     .set(ReservationDetails)

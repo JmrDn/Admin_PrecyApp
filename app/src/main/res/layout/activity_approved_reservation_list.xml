@@ -1,16 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ApprovedReservationList"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:id="@+id/approvedList_drawerLayout"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/approvedRecyclerView"
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/approvedListNav_View"
+        app:headerLayout="@layout/header_main_menu"
+        app:menu="@menu/admin_main_menu"
+        android:layout_gravity="start"/>
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_height="match_parent"
+        >
 
-</RelativeLayout>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/approvedList_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00008577"
+            android:transitionName=" "
+            android:navigationIcon="@drawable/toolbaricon"
+            />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/approvedList_toolbar">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/approvedRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp"
+                    tools:ignore="MissingConstraints" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/finished_Btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="50dp"
+                    android:background="@color/semibrown"
+                    android:text="@string/finish"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+
+        </ScrollView>
+
+
+
+    </RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

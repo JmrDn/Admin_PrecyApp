@@ -184,7 +184,7 @@ public class ApprovingReservationProcess extends AppCompatActivity {
                                Log.d("TAG", "data sending" + e);
                            }
                        });
-
+                Toast.makeText(getApplicationContext(), "Reservation " + reservationID + " approved", Toast.LENGTH_LONG).show();
                startActivity(new Intent(getApplicationContext(), AdminDashboard.class));
 
            }

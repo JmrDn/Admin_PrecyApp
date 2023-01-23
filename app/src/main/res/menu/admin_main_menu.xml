@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/navDashboard"
+            android:title="@string/dashboard"
+            android:iconTint="@color/semibrown"
+            android:icon="@drawable/ic_baseline_home_24"/>
+
+        <item android:id="@+id/navReservation"
+            android:title="@string/reservation"
+            android:iconTint="@color/semibrown"
+            android:icon="@drawable/dashboardicon">
+
+            <menu>
+                <group android:checkableBehavior="single" >
+                    <item android:id="@+id/navPendingReservation"
+                        android:title="@string/pending_reservation"/>
+
+                    <item android:id="@+id/navApprovedReservation"
+                        android:title="@string/approved_reservation"/>
+                    <item android:id="@+id/navFinishedReservation"
+                        android:title="@string/finished_reservation"/>
+
+                </group>
+            </menu>
+        </item>
+
+        <item android:id="@+id/navMaintenance"
+            android:title="@string/maintenance"
+            android:icon="@drawable/maintenance_icon"/>
+
+        <item android:id="@+id/navReport"
+            android:title="@string/report"
+            android:icon="@drawable/report_icon"/>
+
+
+    </group>
+</menu>

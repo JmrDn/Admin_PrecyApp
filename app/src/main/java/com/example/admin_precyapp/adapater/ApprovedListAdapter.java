@@ -26,10 +26,12 @@ public class ApprovedListAdapter extends RecyclerView.Adapter<ApprovedListAdapte
 
     Context context;
     ArrayList<ApprovedListModel> list;
+    private SelectListener listener;
 
-    public ApprovedListAdapter(Context context, ArrayList<ApprovedListModel> list) {
+    public ApprovedListAdapter(Context context, ArrayList<ApprovedListModel> list, SelectListener listener) {
         this.context = context;
         this.list = list;
+        this.listener = listener;
     }
 
     @NonNull
@@ -38,7 +40,7 @@ public class ApprovedListAdapter extends RecyclerView.Adapter<ApprovedListAdapte
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.approved_reservation_list, parent, false);
 
-        return  new ApprovedListAdapter.MyViewHolder(view);
+        return  new ApprovedListAdapter.MyViewHolder(view, listener);
     }
 
     @Override
@@ -57,6 +59,11 @@ public class ApprovedListAdapter extends RecyclerView.Adapter<ApprovedListAdapte
         holder.companyName.setText(approvedListModel.getCompanyName());
         holder.venue.setText(approvedListModel.getVenue());
 
+        if(approvedListModel.getStatus().equals(true)){
+            holder.cardView.setCardBackgroundColor(Color.RED);
+        }else if(approvedListModel.getStatus().equals(false)){
+            holder.cardView.setCardBackgroundColor(Color.WHITE);
+        }
     }
 
     @Override
@@ -69,8 +76,10 @@ public class ApprovedListAdapter extends RecyclerView.Adapter<ApprovedListAdapte
         TextView reservationID, name, mobileno, reservationDate, event, companyName, venue,
                 numofPeople, userID, dateOfReservation, timeOfReservation;
 
+        CardView cardView;
 
-        public MyViewHolder(@NonNull View itemView) {
+
+        public MyViewHolder(@NonNull View itemView, SelectListener selectListener) {
             super(itemView);
 
             reservationID = itemView.findViewById(R.id.reservationID);
@@ -84,6 +93,20 @@ public class ApprovedListAdapter extends RecyclerView.Adapter<ApprovedListAdapte
             timeOfReservation = itemView.findViewById(R.id.timeofReservation_TxtView);
             companyName = itemView.findViewById(R.id.companyName);
             venue = itemView.findViewById(R.id.venue);
+            cardView = itemView.findViewById(R.id.approved_cardView);
+
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(selectListener != null ){
+                        int pos = getAdapterPosition();
+                        if(pos!= RecyclerView.NO_POSITION){
+                            selectListener.onItemClicked(pos);
+                        }
+
+                    }
+                }
+            });
 
         }
     }
